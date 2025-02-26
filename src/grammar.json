@@ -1,0 +1,197 @@
+{
+  "name": "todo",
+  "rules": {
+    "source": {
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "line"
+      }
+    },
+    "line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "tag"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_name_false_alarms"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_text"
+              }
+            ]
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "__newline"
+        }
+      ]
+    },
+    "_text": {
+      "type": "PREC",
+      "value": 2,
+      "content": {
+        "type": "REPEAT1",
+        "content": {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "[^A-Z]"
+            }
+          ]
+        }
+      }
+    },
+    "name": {
+      "type": "PREC",
+      "value": 3,
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "TODO"
+          },
+          {
+            "type": "STRING",
+            "value": "FIXME"
+          },
+          {
+            "type": "STRING",
+            "value": "CHANGED"
+          },
+          {
+            "type": "STRING",
+            "value": "XXX"
+          },
+          {
+            "type": "STRING",
+            "value": "IDEA"
+          },
+          {
+            "type": "STRING",
+            "value": "HACK"
+          },
+          {
+            "type": "STRING",
+            "value": "NOTE"
+          },
+          {
+            "type": "STRING",
+            "value": "REVIEW"
+          },
+          {
+            "type": "STRING",
+            "value": "NB"
+          },
+          {
+            "type": "STRING",
+            "value": "BUG"
+          },
+          {
+            "type": "STRING",
+            "value": "QUESTION"
+          },
+          {
+            "type": "STRING",
+            "value": "COMBAK"
+          },
+          {
+            "type": "STRING",
+            "value": "TEMP"
+          },
+          {
+            "type": "STRING",
+            "value": "DEBUG"
+          },
+          {
+            "type": "STRING",
+            "value": "OPTIMIZE"
+          },
+          {
+            "type": "STRING",
+            "value": "WARNING"
+          }
+        ]
+      }
+    },
+    "_name_false_alarms": {
+      "type": "PATTERN",
+      "value": "\\w+"
+    },
+    "tag": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "name"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "__newline": {
+      "type": "PATTERN",
+      "value": "\\r?\\n"
+    },
+    "__whitespace": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "STRING",
+            "value": " "
+          },
+          {
+            "type": "STRING",
+            "value": "\t"
+          },
+          {
+            "type": "STRING",
+            "value": "\u000b"
+          },
+          {
+            "type": "STRING",
+            "value": "\f"
+          }
+        ]
+      }
+    }
+  },
+  "extras": [
+    {
+      "type": "SYMBOL",
+      "name": "__whitespace"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [
+    "line"
+  ],
+  "supertypes": []
+}
+

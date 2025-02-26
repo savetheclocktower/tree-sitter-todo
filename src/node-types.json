@@ -1,0 +1,105 @@
+[
+  {
+    "type": "name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "source",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": "BUG",
+    "named": false
+  },
+  {
+    "type": "CHANGED",
+    "named": false
+  },
+  {
+    "type": "COMBAK",
+    "named": false
+  },
+  {
+    "type": "DEBUG",
+    "named": false
+  },
+  {
+    "type": "FIXME",
+    "named": false
+  },
+  {
+    "type": "HACK",
+    "named": false
+  },
+  {
+    "type": "IDEA",
+    "named": false
+  },
+  {
+    "type": "NB",
+    "named": false
+  },
+  {
+    "type": "NOTE",
+    "named": false
+  },
+  {
+    "type": "OPTIMIZE",
+    "named": false
+  },
+  {
+    "type": "QUESTION",
+    "named": false
+  },
+  {
+    "type": "REVIEW",
+    "named": false
+  },
+  {
+    "type": "TEMP",
+    "named": false
+  },
+  {
+    "type": "TODO",
+    "named": false
+  },
+  {
+    "type": "WARNING",
+    "named": false
+  },
+  {
+    "type": "XXX",
+    "named": false
+  }
+]
